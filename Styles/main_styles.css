@@ -1,0 +1,36 @@
+
+.main-container {
+  padding:var(--main-container-padding);
+}
+
+/* header */
+.header {
+  border:3px solid var(--clr-header-outline);
+  border-radius:0.7rem;
+}
+
+.header__wrapper {
+  padding:var(--header-wrapper-padding);
+}
+
+.score-box {
+  background-color:white;
+  padding:0.8rem 2rem;
+  border-radius:0.5rem;
+  align-items:center;
+}
+
+.score__title {
+  --letter-spacing:0.8px;
+
+  color:var(--clr-score-title);
+  font-size:var(--fs-score-title);
+  font-weight:var(--fw-score-title);
+  letter-spacing:var(--letter-spacing);
+}
+
+.score__points {
+  color:var(--clr-score-points);
+  font-size:var(--fs-score-points);
+  font-weight:var(--fw-score-points);
+}
