@@ -1,6 +1,8 @@
 
 .main-container {
   padding:var(--main-container-padding);
+  max-width:var(--main-container-width);
+  grid-template-rows:auto 1fr auto;
 }
 
 /* header */
@@ -15,7 +17,7 @@
 
 .score-box {
   background-color:white;
-  padding:0.8rem 2rem;
+  padding:0.8rem 2.4rem;
   border-radius:0.5rem;
   align-items:center;
 }
@@ -33,4 +35,8 @@
   color:var(--clr-score-points);
   font-size:var(--fs-score-points);
   font-weight:var(--fw-score-points);
+}
+
+.pentagon-figure {
+  width:60%;
 }

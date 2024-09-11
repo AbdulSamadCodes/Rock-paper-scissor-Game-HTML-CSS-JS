@@ -26,6 +26,10 @@
   place-content: center;
 }
 
+.align-self-center {
+  align-self:center;
+}
+
 .relative {
   position: relative;
 }
