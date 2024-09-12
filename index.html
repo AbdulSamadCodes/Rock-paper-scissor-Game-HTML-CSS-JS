@@ -15,56 +15,61 @@
     <!-- font css link -->
     <link rel="stylesheet" href="/Font/font.css" />
 
-    <!-- custom stylesheets links-->
-    <link rel="stylesheet" href="/Styles/reset.css" />
+    <!-- custom stylesheets links -->
     <link rel="stylesheet" href="/Styles/global_custom_properties.css" />
+    <link rel="stylesheet" href="/Styles/reset.css" />
     <link rel="stylesheet" href="/Styles/utility_classes.css" />
     <link rel="stylesheet" href="/Styles/main_styles.css" />
 
     <title>Frontend Mentor | Rock, Paper, Scissors</title>
-  </head> 
+  </head>
   <body>
-
     <!-- main container -->
-    <div class="main-container grid margin-inline-auto">
+    <div class="main-container">
 
-      <!-- header -->
-      <header class="header" data-header>
-        <div
-          class="header__wrapper wrapper flex align-items-center justify-content-between"
-        >
-          <div class="logo">
-            <a href="#">
-              <img src="/images/logo-bonus.svg" width="70" />
-            </a>
+      <div class="wrapper margin-inline-auto grid align-items-start">
+        <!-- header -->
+        <header class="header" data-header>
+          <div
+            class="header__wrapper flex align-items-center justify-content-between"
+          >
+            <div class="logo">
+              <a href="#" tabindex="-1">
+                <img src="/images/logo-bonus.svg" />
+              </a>
+            </div>
+
+            <div class="score-box grid place-content-center" data-score-box>
+              <p class="score__title uppercase">Score</p>
+
+              <span class="score__points text-center" data-score-points
+                >12</span
+              >
+            </div>
           </div>
+        </header>
 
-          <div class="score-box grid place-content-center" data-score-box>
-            <p class="score__title uppercase">Score</p>
+        <!--game window -->
+        <div class="game-window" data-game-window>
 
-            <span class="score__points text-center" data-score-points>12</span>
-          </div>
-        </div>
-      </header>
-
-      <main>
-        <article>
-
-          <!--game window -->
-          <div class="game-window align-items-center" data-game-window>
-            <div class="wrapper">
-
-              <div class="pentagon-figure-wrapper align-self-center">
-                <figure class="pentagon-figure margin-inline-auto">
-                  <img src="/images/bg-pentagon.svg" width=""> 
-                </figure>
-              </div>
-
+          <div class="game-window-wrapper grid">
+            <div class="pentagon-figure-wrapper">
+              <figure class="pentagon-figure margin-inline-auto">
+                <img src="/images/bg-pentagon.svg" class="w-100" />
+              </figure>
             </div>
           </div>
 
-        </article>
-      </main>
+        </div>
+
+      </div>
+
+      <!--rules button-->
+      <div class="rules-wrapper">
+        <button class="rules__btn uppercase">
+          Rules
+        </button>
+      </div>
 
     </div>
   </body>

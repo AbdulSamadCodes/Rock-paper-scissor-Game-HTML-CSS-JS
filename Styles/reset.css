@@ -55,8 +55,8 @@ textarea {
 }
 
 :focus-visible {
-  outline: 1px solid black;
-  outline-offset: -3px;
+  outline: 2px solid black;
+  outline-offset: 0.3rem;
 }
 
 html {
@@ -67,9 +67,9 @@ html {
 }
 
 body {
-  background:var(--clr-body-bg) no-repeat;
-  min-height:100dvh;
-  min-height:100vh;
+  background: var(--clr-body-bg) no-repeat;
+  min-height: 100dvh;
+  min-height: 100vh;
   font-size: 1.4rem;
-  font-family: var( --ff-Barlow-semi-condensed);
+  font-family: var(--ff-Barlow-semi-condensed);
 }

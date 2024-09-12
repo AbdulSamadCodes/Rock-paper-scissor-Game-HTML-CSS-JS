@@ -1,42 +1,102 @@
+/* custom properties */
+:root {
+  /* spacings */
+  --rules-btn-margin-inline: auto;
+  --rules-btn-padding: 0.8rem 3.2rem;
+
+  /* typography */
+  --fs-score-title: 1.2rem;
+  --fs-score-points: 4.2rem;
+  --fs-rules-btn: 1.5rem;
+
+  --fw-score-title: 700;
+  --fw-score-points: 700;
+  --fw-rules-btn: 600;
+
+  /* widths */
+  --logo-width: 70px;
+  --pentagon-figure-width: min(320px, 70%);
+}
 
 .main-container {
-  padding:var(--main-container-padding);
-  max-width:var(--main-container-width);
-  grid-template-rows:auto 1fr auto;
+  min-height: 100vh;
+  padding: var(--main-container-padding);
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+.wrapper {
+  width: var(--wrapper-maxwidth);
 }
 
 /* header */
 .header {
-  border:3px solid var(--clr-header-outline);
-  border-radius:0.7rem;
+  border: 3px solid var(--clr-header-outline);
+  border-radius: 0.7rem;
 }
 
 .header__wrapper {
-  padding:var(--header-wrapper-padding);
+  padding: var(--header-wrapper-padding);
+}
+
+.logo img {
+  width: var(--logo-width);
 }
 
 .score-box {
-  background-color:white;
-  padding:0.8rem 2.4rem;
-  border-radius:0.5rem;
-  align-items:center;
+  background-color: var(--clr-white);
+  padding: 0.8rem 2.4rem;
+  border-radius: 0.5rem;
+  align-items: center;
 }
 
 .score__title {
-  --letter-spacing:0.8px;
+  --letter-spacing: 0.8px;
 
-  color:var(--clr-score-title);
-  font-size:var(--fs-score-title);
-  font-weight:var(--fw-score-title);
-  letter-spacing:var(--letter-spacing);
+  color: var(--clr-score-title);
+  font-size: var(--fs-score-title);
+  font-weight: var(--fw-score-title);
+  letter-spacing: var(--letter-spacing);
 }
 
 .score__points {
-  color:var(--clr-score-points);
-  font-size:var(--fs-score-points);
-  font-weight:var(--fw-score-points);
+  color: var(--clr-score-points);
+  font-size: var(--fs-score-points);
+  font-weight: var(--fw-score-points);
 }
 
+/* game window */
 .pentagon-figure {
-  width:60%;
+  max-width: var(--pentagon-figure-width);
+}
+
+.rules__btn {
+  --letter-spacing: 2.6px;
+
+  color: var(--clr-light);
+  font-size: var(--fs-rules-btn);
+  font-weight: var(--fw-rules-btn);
+  letter-spacing: var(--letter-spacing);
+  padding: var(--rules-btn-padding);
+  border: 1.4px solid var(--clr-light);
+  border-radius: 0.8rem;
+  margin-inline: var(--rules-btn-margin-inline);
+}
+
+@media (width > 575px) {
+  :root {
+    --wrapper-maxwidth: 500px;
+    --rules-btn-margin-inline: auto 0;
+  }
+}
+
+@media (width > 768px) {
+  :root {
+    --header-wrapper-padding: 1rem 1.5rem 1rem 2.5rem;
+    --wrapper-maxwidth: 550px;
+
+    --fs-score-title: 1.4rem;
+
+    --logo-width: 90px;
+  }
 }
