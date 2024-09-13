@@ -21,6 +21,11 @@
     <link rel="stylesheet" href="/Styles/utility_classes.css" />
     <link rel="stylesheet" href="/Styles/main_styles.css" />
 
+
+    <!-- scripts links -->
+    <script src="/src/rules_dialog.js" defer></script>
+
+
     <title>Frontend Mentor | Rock, Paper, Scissors</title>
   </head>
   <body>
@@ -64,12 +69,31 @@
 
       </div>
 
-      <!--rules button-->
-      <div class="rules-wrapper">
-        <button class="rules__btn uppercase">
+      <!-- rules button -->
+      <div class="rules-btn-wrapper">
+        <button class="rules__btn uppercase" data-rules-btn>
           Rules
         </button>
       </div>
+
+      <!-- rules modal  -->
+      <dialog class="rules-dialog fixed margin-inline-auto" data-rules-dialog>
+        <div class="rules__dialog__wrapper grid">
+          <h2 class="rules__dialog__title uppercase">Rules
+          </h2>
+
+          <div class="rules__figure  margin-inline-auto grid align-items-center">
+            <figure>
+              <img src="images/image-rules-bonus.svg">
+            </figure> 
+          </div>
+
+            <button class="rules__dialog__close-btn margin-inline-auto" data-dialog-close-btn>
+                <img src="/images/icon-close.svg">
+            </button>
+
+        </div>
+      </dialog>
 
     </div>
   </body>

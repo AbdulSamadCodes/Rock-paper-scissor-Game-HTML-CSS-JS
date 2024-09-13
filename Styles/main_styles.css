@@ -3,19 +3,25 @@
   /* spacings */
   --rules-btn-margin-inline: auto;
   --rules-btn-padding: 0.8rem 3.2rem;
+  --rules-dialog-padding: 8rem 3rem 4rem;
+  --rules-dialog-wrapper-gap:0;
 
   /* typography */
   --fs-score-title: 1.2rem;
   --fs-score-points: 4.2rem;
   --fs-rules-btn: 1.5rem;
+  --fs-rules-dialog-title: 2.7rem;
 
   --fw-score-title: 700;
   --fw-score-points: 700;
   --fw-rules-btn: 600;
 
-  /* widths */
+  /* widths & heights*/
   --logo-width: 70px;
   --pentagon-figure-width: min(320px, 70%);
+
+  --rules-dialog-width: 100vw;
+  --rules-dialog-height: 100vh;
 }
 
 .main-container {
@@ -83,20 +89,83 @@
   margin-inline: var(--rules-btn-margin-inline);
 }
 
+/* rules modal */
+.rules-dialog {
+  width: var(--rules-dialog-width) ;
+  height: var(--rules-dialog-height);
+  padding: var(--rules-dialog-padding);
+  inset: 0;
+  border: none;
+  border-radius: 1rem;
+}
+
+.rules__dialog__title {
+  --text-align: center;
+
+  color: hsl(214, 47%, 23%);
+  text-align: var(--text-align);
+  font-size: var(--fs-rules-dialog-title);
+  letter-spacing: 0.5px;
+}
+
+.rules__dialog__wrapper {
+  height: 100%;
+  grid-template-rows: auto 1fr auto;
+  gap:var(--rules-dialog-wrapper-gap);
+}
+
+/* media queries */
+
+/* responsive for tablet devices */
 @media (width > 575px) {
   :root {
     --wrapper-maxwidth: 500px;
+    --main-container-padding: 3rem 4rem;
     --rules-btn-margin-inline: auto 0;
   }
 }
 
+/* responsive for desktop  size devices */
 @media (width > 768px) {
   :root {
     --header-wrapper-padding: 1rem 1.5rem 1rem 2.5rem;
-    --wrapper-maxwidth: 550px;
+    --rules-dialog-padding: 4rem 3rem 4rem;
+    --rules-dialog-wrapper-gap:3rem;
 
     --fs-score-title: 1.4rem;
 
+    --wrapper-maxwidth: 550px;
     --logo-width: 90px;
+    --rules-dialog-width: calc(var( --wrapper-maxwidth) / 1.7);
+    --rules-dialog-height: max-content;
+  }
+
+  /* desktop rules modal */
+  .rules-dialog {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .rules-dialog::backdrop {
+    background-color:hsla(0,0%,0%,0.5);
+  } 
+
+  .rules__dialog__wrapper {
+    grid-template-columns:auto auto;
+    grid-template-rows:auto auto;
+  }
+
+  .rules__dialog__title {
+    --text-align: left;
+  }
+
+  .rules__dialog__close-btn {
+    grid-column:2/3;
+    grid-row:1;
+    margin-inline:auto 0;
+  }  
+
+  .rules__figure {
+    grid-column:1/-1;
   }
 }
