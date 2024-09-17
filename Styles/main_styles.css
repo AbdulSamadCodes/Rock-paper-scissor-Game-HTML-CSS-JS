@@ -4,7 +4,14 @@
   --rules-btn-margin-inline: auto;
   --rules-btn-padding: 0.8rem 3.2rem;
   --rules-dialog-padding: 8rem 3rem 4rem;
-  --rules-dialog-wrapper-gap:0;
+  --rules-dialog-wrapper-gap: 0;
+
+  /* colors */
+  --clr-yellow: hsl(39, 89%, 49%);
+  --clr-red: hsl(349, 71%, 52%);
+  --clr-cyan: hsl(189, 59%, 53%);
+  --clr-purple: hsl(261, 73%, 60%);
+  --clr-blue: hsl(230, 89%, 62%);
 
   /* typography */
   --fs-score-title: 1.2rem;
@@ -17,11 +24,13 @@
   --fw-rules-btn: 600;
 
   /* widths & heights*/
-  --logo-width: 70px;
-  --pentagon-figure-width: min(320px, 70%);
+  --logo-width: 7rem;
+  --pentagon-figure-width: min(230px, 70%);
 
   --rules-dialog-width: 100vw;
   --rules-dialog-height: 100vh;
+
+  --game-option-img-width: 50%;
 }
 
 .main-container {
@@ -87,11 +96,19 @@
   border: 1.4px solid var(--clr-light);
   border-radius: 0.8rem;
   margin-inline: var(--rules-btn-margin-inline);
+
+  transition:background-color 300ms ease,
+             color 300ms ease;     
+}
+
+.rules__btn:is(:hover,:focus) {
+  background-color:var(--clr-white);
+  color:var(--clr-dark);
 }
 
 /* rules modal */
 .rules-dialog {
-  width: var(--rules-dialog-width) ;
+  width: var(--rules-dialog-width);
   height: var(--rules-dialog-height);
   padding: var(--rules-dialog-padding);
   inset: 0;
@@ -111,7 +128,59 @@
 .rules__dialog__wrapper {
   height: 100%;
   grid-template-rows: auto 1fr auto;
-  gap:var(--rules-dialog-wrapper-gap);
+  gap: var(--rules-dialog-wrapper-gap);
+}
+
+/* game options */
+.game-option {
+  --game-option-width: 5.5rem;
+
+  width: var(--game-option-width);
+  aspect-ratio: 1/1;
+  background-color: var(--clr-white);
+  border-radius: 50%;
+
+  outline: 8px solid;
+}
+
+.game-option > img {
+  width: var(--game-option-img-width);
+}
+
+[data-option="scissors"] {
+  top: -3rem;
+  left: 50%;
+  translate: -50%;
+
+  outline-color: var(--clr-yellow);
+}
+
+[data-option="spock"] {
+  top: 23%;
+  left: -3rem;
+  
+  outline-color: var(--clr-cyan);
+}
+
+[data-option="paper"] {
+  top: 23%;
+  right: -3rem;
+
+  outline-color: var(--clr-blue);
+}
+
+[data-option="lizard"] {
+  bottom: -3rem;
+  left: 3rem;
+
+  outline-color: var(--clr-purple);
+}
+
+[data-option="rock"] {
+  bottom: -3rem;
+  right: 3rem;
+
+  outline-color: var(--clr-red);
 }
 
 /* media queries */
@@ -130,16 +199,16 @@
   :root {
     --header-wrapper-padding: 1rem 1.5rem 1rem 2.5rem;
     --rules-dialog-padding: 4rem 3rem 4rem;
-    --rules-dialog-wrapper-gap:3rem;
+    --rules-dialog-wrapper-gap: 3rem;
 
     --fs-score-title: 1.4rem;
 
     --wrapper-maxwidth: 550px;
     --logo-width: 90px;
-    --rules-dialog-width: calc(var( --wrapper-maxwidth) / 1.7);
+    --rules-dialog-width: calc(var(--wrapper-maxwidth) / 1.7);
     --rules-dialog-height: max-content;
   }
-
+  
   /* desktop rules modal */
   .rules-dialog {
     top: 50%;
@@ -147,25 +216,30 @@
   }
 
   .rules-dialog::backdrop {
-    background-color:hsla(0,0%,0%,0.5);
-  } 
-
-  .rules__dialog__wrapper {
-    grid-template-columns:auto auto;
-    grid-template-rows:auto auto;
+    background-color: hsla(0, 0%, 0%, 0.5);
   }
 
+  .rules__dialog__wrapper {
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+  }
+  
   .rules__dialog__title {
     --text-align: left;
   }
-
+  
   .rules__dialog__close-btn {
-    grid-column:2/3;
-    grid-row:1;
-    margin-inline:auto 0;
-  }  
-
+    grid-column: 2/3;
+    grid-row: 1;
+    margin-inline: auto 0;
+  }
+  
   .rules__figure {
-    grid-column:1/-1;
+    grid-column: 1/-1;
+  }
+
+  /* game options */
+  .game-option{
+    --game-option-width: 6.5rem;
   }
 }

@@ -26,6 +26,10 @@
   place-content: center;
 }
 
+.place-items-center {
+  place-items:center;
+}
+
 .align-self-center {
   align-self:center;
 }

@@ -3,7 +3,7 @@ const gameWindow = document.querySelector("[data-game-window]");
 class GameOption {
   constructor(optionName,imgSrc) {
     this.gameOption = document.createElement("button");
-    this.gameOption.classList.add("game-option","grid","place-content-center",);
+    this.gameOption.classList.add("game-option","grid","place-items-center","absolute");
     this.gameOption.dataset.option = optionName;
 
     this.imgSrc = imgSrc;
