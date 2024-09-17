@@ -69,3 +69,7 @@
 .cursor-pointer {
   cursor: pointer;
 }
+
+.max-width-max_content {
+  width:max-content;
+}
