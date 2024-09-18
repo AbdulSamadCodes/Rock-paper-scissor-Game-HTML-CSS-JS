@@ -18,7 +18,6 @@ class GameOption {
 
   getGameOption() {
      this.appendOptionImage()
-
      return this.gameOption;
   }
 }
@@ -27,7 +26,7 @@ class GameOption {
 function renderGameOption(parentElement = document, optionName ,imgSrc) {
   const gameOption = new GameOption(optionName,imgSrc).getGameOption();
   parentElement.appendChild(gameOption);
-}
+} 
 
 //function to render the game options at the first step
 function renderFirstStepGameOptions() {

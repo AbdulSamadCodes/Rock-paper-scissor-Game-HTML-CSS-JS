@@ -6,6 +6,8 @@
   --rules-dialog-padding: 8rem 3rem 4rem;
   --rules-dialog-wrapper-gap: 0;
 
+  --option-wrapper-gap: 1.5rem;
+
   /* colors */
   --clr-yellow: hsl(39, 89%, 49%);
   --clr-red: hsl(349, 71%, 52%);
@@ -19,29 +21,36 @@
   --fs-rules-btn: 1.5rem;
   --fs-rules-dialog-title: 2.7rem;
 
+  --fs-option-wrapper-text: 1.4rem;
+
   --fw-score-title: 700;
   --fw-score-points: 700;
   --fw-rules-btn: 600;
 
   /* widths & heights*/
-  --logo-width: 7rem;
+  --logo-width: 8rem;
   --pentagon-figure-width: min(230px, 70%);
 
   --rules-dialog-width: 100vw;
   --rules-dialog-height: 100vh;
 
   --game-option-img-width: 50%;
+
+  --option-container-width: 10rem;
 }
 
 .main-container {
   min-height: 100vh;
   padding: var(--main-container-padding);
-  display: grid;
   grid-template-rows: 1fr auto;
 }
 
 .wrapper {
+  --wrapper-gap: 0rem;
+
   width: var(--wrapper-maxwidth);
+  grid-template-rows: auto 1fr;
+  gap: var(--wrapper-gap);
 }
 
 /* header */
@@ -81,6 +90,12 @@
 }
 
 /* game window */
+.game-window {
+  --game-window-alignment: center;
+
+  align-self: var(--game-window-alignment);
+}
+
 .pentagon-figure {
   max-width: var(--pentagon-figure-width);
 }
@@ -97,13 +112,12 @@
   border-radius: 0.8rem;
   margin-inline: var(--rules-btn-margin-inline);
 
-  transition:background-color 300ms ease,
-             color 300ms ease;     
+  transition: background-color 300ms ease, color 300ms ease;
 }
 
-.rules__btn:is(:hover,:focus) {
-  background-color:var(--clr-white);
-  color:var(--clr-dark);
+.rules__btn:is(:hover, :focus) {
+  background-color: var(--clr-white);
+  color: var(--clr-dark);
 }
 
 /* rules modal */
@@ -158,7 +172,7 @@
 [data-option="spock"] {
   top: 23%;
   left: -3rem;
-  
+
   outline-color: var(--clr-cyan);
 }
 
@@ -183,6 +197,40 @@
   outline-color: var(--clr-red);
 }
 
+/* step 2 (contest styles) */
+.wrapper:has(.contest-options-container) {
+  --wrapper-gap: 8rem;
+}
+
+.wrapper:has(.contest-options-container) .game-window {
+  --game-window-alignment: start;
+}
+
+.option-wrapper {
+  --flex-direction: column-reverse;
+
+  flex-direction: var(--flex-direction);
+  gap: var(--option-wrapper-gap);
+}
+
+.option__wrapper-text {
+  --text-align: center;
+
+  text-align: var(--text-align);
+  color: var(--clr-white);
+  font-size: var(--fs-option-wrapper-text);
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.option-container {
+  width: var(--option-container-width);
+  aspect-ratio: 1/1;
+  background-color: hsl(0, 0%, 0%, 0.2);
+  border-radius: 50%;
+  overflow:hidden;  
+}
+
 /* media queries */
 
 /* responsive for tablet devices */
@@ -191,6 +239,15 @@
     --wrapper-maxwidth: 500px;
     --main-container-padding: 3rem 4rem;
     --rules-btn-margin-inline: auto 0;
+    --option-wrapper-gap: 2.5rem;
+
+    --fs-option-wrapper-text: 1.5rem;
+
+    --option-container-width: 15rem;
+  }
+
+  .wrapper:has(.contest-options-container) {
+    --wrapper-gap: 12rem;
   }
 }
 
@@ -200,15 +257,19 @@
     --header-wrapper-padding: 1rem 1.5rem 1rem 2.5rem;
     --rules-dialog-padding: 4rem 3rem 4rem;
     --rules-dialog-wrapper-gap: 3rem;
+    --option-wrapper-gap: 3.5rem;
 
     --fs-score-title: 1.4rem;
+    --fs-option-wrapper-text: 1.8rem;
 
     --wrapper-maxwidth: 550px;
     --logo-width: 90px;
     --rules-dialog-width: calc(var(--wrapper-maxwidth) / 1.7);
     --rules-dialog-height: max-content;
+
+    --option-container-width: 17rem;
   }
-  
+
   /* desktop rules modal */
   .rules-dialog {
     top: 50%;
@@ -223,23 +284,35 @@
     grid-template-columns: auto auto;
     grid-template-rows: auto auto;
   }
-  
+
   .rules__dialog__title {
     --text-align: left;
   }
-  
+
   .rules__dialog__close-btn {
     grid-column: 2/3;
     grid-row: 1;
     margin-inline: auto 0;
   }
-  
+
   .rules__figure {
     grid-column: 1/-1;
   }
 
   /* game options */
-  .game-option{
+  .game-option {
     --game-option-width: 6.5rem;
+  }
+
+  .wrapper:has(.contest-options-container) {
+    --wrapper-gap: 0rem;
+  }
+
+  .wrapper:has(.contest-options-container) .game-window {
+    --game-window-alignment: center;
+  }
+
+  .option-wrapper {
+    --flex-direction: column;
   }
 }

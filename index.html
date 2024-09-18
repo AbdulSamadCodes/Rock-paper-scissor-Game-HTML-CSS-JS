@@ -15,23 +15,23 @@
     <!-- font css link -->
     <link rel="stylesheet" href="/Font/font.css" />
 
+    <!-- scripts links -->
+    <script src="/src/rules_dialog.js" defer></script>
+    <script src="/src/game_options.js" defer></script>
+    <script src="/src/render_game_options.js" defer></script>
+    <script src="/src/render__contest.js" defer></script>
+    
     <!-- custom stylesheets links -->
     <link rel="stylesheet" href="/Styles/global_custom_properties.css" />
     <link rel="stylesheet" href="/Styles/reset.css" />
     <link rel="stylesheet" href="/Styles/utility_classes.css" />
     <link rel="stylesheet" href="/Styles/main_styles.css" />
 
-    <!-- scripts links -->
-    <script src="/src/rules_dialog.js" defer></script>
-    <script src="/src/game_options.js" defer></script>
-    <script src="/src/render_game_options.js" defer></script>
-
     <title>Frontend Mentor | Rock, Paper, Scissors</title>
   </head>
   <body>
     <!-- main container -->
-    <div class="main-container">
-
+    <div class="main-container grid">
       <div class="wrapper margin-inline-auto grid align-items-start">
         <!-- header -->
         <header class="header" data-header>
@@ -56,46 +56,43 @@
 
         <!--game window -->
         <div class="game-window" data-game-window>
-
-          <div class="game-window-wrapper grid">
-            <div class="pentagon-figure-wrapper">
-              <figure class= "pentagon-figure margin-inline-auto relative" data-pentagon-figure>
+          <div class="game-window-wrapper grid" data-dame-window-wrapper>
+            <div class="pentagon-figure-wrapper" data-pentagon-figure-wrapper>
+              <figure
+                class="pentagon-figure margin-inline-auto relative"
+                data-pentagon-figure
+              >
                 <img src="/images/bg-pentagon.svg" class="w-100" />
               </figure>
             </div>
-
           </div>
-          
         </div>
-
       </div>
 
       <!-- rules button -->
       <div class="rules-btn-wrapper">
-        <button class="rules__btn uppercase" data-rules-btn>
-          Rules
-        </button>
+        <button class="rules__btn uppercase" data-rules-btn>Rules</button>
       </div>
 
       <!-- rules modal  -->
       <dialog class="rules-dialog fixed margin-inline-auto" data-rules-dialog>
         <div class="rules__dialog__wrapper grid">
-          <h2 class="rules__dialog__title uppercase">Rules
-          </h2>
+          <h2 class="rules__dialog__title uppercase">Rules</h2>
 
-          <div class="rules__figure  margin-inline-auto grid align-items-center">
+          <div class="rules__figure margin-inline-auto grid align-items-center">
             <figure>
-              <img src="images/image-rules-bonus.svg">
-            </figure> 
+              <img src="images/image-rules-bonus.svg" />
+            </figure>
           </div>
 
-            <button class="rules__dialog__close-btn margin-inline-auto" data-dialog-close-btn>
-                <img src="/images/icon-close.svg">
-            </button>
-
+          <button
+            class="rules__dialog__close-btn margin-inline-auto"
+            data-dialog-close-btn
+          >
+            <img src="/images/icon-close.svg" />
+          </button>
         </div>
       </dialog>
-
     </div>
   </body>
 </html>
