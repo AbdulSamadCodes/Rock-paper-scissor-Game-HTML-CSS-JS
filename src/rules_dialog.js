@@ -1,3 +1,4 @@
+//function to handle the rules modal
 function handleRulesDialog() {
   const rulesDialog = document.querySelector("[data-rules-dialog]");
   const rulesBtn = document.querySelector("[data-rules-btn]");
