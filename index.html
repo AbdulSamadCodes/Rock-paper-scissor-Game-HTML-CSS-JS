@@ -12,27 +12,35 @@
       href="/images/favicon-32x32.png"
     />
 
-    <!-- font css link -->
-    <link rel="stylesheet" href="/Font/font.css" />
+    <!-- google font links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- custom stylesheets links -->
+    <link rel="stylesheet" href="/Styles/global_custom_properties.css" />
+    <link rel="stylesheet" href="/Styles/reset.css" as="style" />
+    <link rel="stylesheet" href="/Styles/utility_classes.css" />
+
+    <link rel="stylesheet" rel="preload" href="/Styles/main_styles.css" />
 
     <!-- scripts links -->
-    <script src="/src/rules_dialog.js" defer></script>
     <script src="/src/game_options.js" defer></script>
     <script src="/src/render_game_options.js" defer></script>
     <script src="/src/render__contest.js" defer></script>
-    
-    <!-- custom stylesheets links -->
-    <link rel="stylesheet" href="/Styles/global_custom_properties.css" />
-    <link rel="stylesheet" href="/Styles/reset.css" />
-    <link rel="stylesheet" href="/Styles/utility_classes.css" />
-    <link rel="stylesheet" href="/Styles/main_styles.css" />
+    <script src="/src/rules_dialog.js" defer></script>
 
     <title>Frontend Mentor | Rock, Paper, Scissors</title>
   </head>
+  
   <body>
     <!-- main container -->
     <div class="main-container grid">
       <div class="wrapper margin-inline-auto grid align-items-start">
+
         <!-- header -->
         <header class="header" data-header>
           <div
@@ -40,7 +48,7 @@
           >
             <div class="logo">
               <a href="#" tabindex="-1">
-                <img src="/images/logo-bonus.svg" />
+                <img src="/images/logo-bonus.svg" loading="eager"/>
               </a>
             </div>
 
@@ -62,7 +70,11 @@
                 class="pentagon-figure margin-inline-auto relative"
                 data-pentagon-figure
               >
-                <img src="/images/bg-pentagon.svg" class="w-100" />
+                <img
+                  src="/images/bg-pentagon.svg"
+                  class="w-100"
+                  loading="lazy"
+                />
               </figure>
             </div>
           </div>
@@ -81,7 +93,7 @@
 
           <div class="rules__figure margin-inline-auto grid align-items-center">
             <figure>
-              <img src="images/image-rules-bonus.svg" />
+              <img src="images/image-rules-bonus.svg" loading="lazy" />
             </figure>
           </div>
 
@@ -89,7 +101,7 @@
             class="rules__dialog__close-btn margin-inline-auto"
             data-dialog-close-btn
           >
-            <img src="/images/icon-close.svg" />
+            <img src="/images/icon-close.svg" loading="lazy" />
           </button>
         </div>
       </dialog>

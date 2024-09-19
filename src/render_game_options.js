@@ -11,6 +11,7 @@ class GameOption {
 
   appendOptionImage() {
     this.optionImg = document.createElement("img");
+    this.optionImg.loading = "lazy";
     this.optionImg.src = this.imgSrc;
     
     this.gameOption.appendChild(this.optionImg);

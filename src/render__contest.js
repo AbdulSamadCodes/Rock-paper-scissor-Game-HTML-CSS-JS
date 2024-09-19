@@ -24,8 +24,8 @@ function createContestWindow() {
     contestOptionsContainer.appendChild(optionWrapper);
   })
 
-  const userOptionContainer = document.createElement("div");
-  const CPUOptionContainer = document.createElement("div");
+  const userOptionContainer = document.createElement("span");
+  const CPUOptionContainer = document.createElement("span");
 
   [userOptionContainer, CPUOptionContainer].forEach((optionContainer) => {
     optionContainer.classList.add("option-container");
@@ -41,5 +41,3 @@ function createContestWindow() {
 }
 
 createContestWindow();
-
-
