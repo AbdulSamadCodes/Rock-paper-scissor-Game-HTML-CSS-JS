@@ -5,7 +5,7 @@
   --header-wrapper-padding: 1.2rem 1rem 1.2rem 2rem;
 
   /* widths */
-  --wrapper-maxwidth: min(100%, 395px);
+  --wrapper-maxwidth: min(100%, 39.5rem);
 
   /* colors */
   --clr-body-bg: linear-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));

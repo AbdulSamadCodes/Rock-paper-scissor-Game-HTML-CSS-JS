@@ -1,9 +1,9 @@
 const gameWindow = document.querySelector("[data-game-window]");
 
-class GameOption {
+export class GameOption {
   constructor(optionName,imgSrc) {
     this.gameOption = document.createElement("button");
-    this.gameOption.classList.add("game-option","grid","place-items-center","absolute");
+    this.gameOption.classList.add("game-option","grid","place-items-center");
     this.gameOption.dataset.option = optionName;
 
     this.imgSrc = imgSrc;
@@ -24,7 +24,7 @@ class GameOption {
 }
 
 //function to render the game option
-function renderGameOption(parentElement = document, optionName ,imgSrc) {
+export function renderGameOption(parentElement = document, optionName ,imgSrc) {
   const gameOption = new GameOption(optionName,imgSrc).getGameOption();
   parentElement.appendChild(gameOption);
 } 

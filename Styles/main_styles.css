@@ -29,14 +29,13 @@
 
   /* widths & heights*/
   --logo-width: 8rem;
-  --pentagon-figure-width: min(230px, 70%);
+  --pentagon-figure-width: min(250px, 70%);
 
   --rules-dialog-width: 100vw;
   --rules-dialog-height: 100vh;
 
-  --game-option-img-width: 50%;
-
   --option-container-width: 10rem;
+  --game-option-img-width: 50%;
 }
 
 .main-container {
@@ -147,14 +146,15 @@
 
 /* game options */
 .game-option {
-  --game-option-width: 5.5rem;
+  --game-option-width: 7.5rem;
+  --border-width: 0.8rem;
 
   width: var(--game-option-width);
   aspect-ratio: 1/1;
   background-color: var(--clr-white);
   border-radius: 50%;
 
-  outline: 8px solid;
+  border: var(--border-width) solid;
 }
 
 .game-option > img {
@@ -166,35 +166,45 @@
   left: 50%;
   translate: -50%;
 
-  outline-color: var(--clr-yellow);
+  border-color: var(--clr-yellow);
 }
 
 [data-option="spock"] {
   top: 23%;
   left: -3rem;
 
-  outline-color: var(--clr-cyan);
+  border-color: var(--clr-cyan);
 }
 
 [data-option="paper"] {
   top: 23%;
   right: -3rem;
 
-  outline-color: var(--clr-blue);
+  border-color: var(--clr-blue);
 }
 
 [data-option="lizard"] {
   bottom: -3rem;
-  left: 3rem;
+  left: 1rem;
 
-  outline-color: var(--clr-purple);
+  border-color: var(--clr-purple);
 }
 
 [data-option="rock"] {
   bottom: -3rem;
-  right: 3rem;
+  right: 1rem;
 
-  outline-color: var(--clr-red);
+  border-color: var(--clr-red);
+}
+
+.game-window:has(.pentagon-figure-wrapper) .game-option {
+  position: absolute;
+}
+
+.game-window:has(.contest-options-container) .game-option {
+  --game-option-width: 100%;
+
+  translate: 0;
 }
 
 /* step 2 (contest styles) */
@@ -228,7 +238,7 @@
   aspect-ratio: 1/1;
   background-color: hsl(0, 0%, 0%, 0.2);
   border-radius: 50%;
-  overflow:hidden;  
+  overflow: hidden;
 }
 
 /* media queries */
@@ -236,7 +246,7 @@
 /* responsive for tablet devices */
 @media (width > 575px) {
   :root {
-    --wrapper-maxwidth: 500px;
+    --wrapper-maxwidth: 50rem;
     --main-container-padding: 3rem 4rem;
     --rules-btn-margin-inline: auto 0;
     --option-wrapper-gap: 2.5rem;
@@ -248,6 +258,10 @@
 
   .wrapper:has(.contest-options-container) {
     --wrapper-gap: 12rem;
+  }
+
+  .game-window:has(.contest-options-container) .game-option {
+    --border-width: 1.3rem;
   }
 }
 
@@ -262,7 +276,7 @@
     --fs-score-title: 1.4rem;
     --fs-option-wrapper-text: 1.8rem;
 
-    --wrapper-maxwidth: 550px;
+    --wrapper-maxwidth: 60rem;
     --logo-width: 90px;
     --rules-dialog-width: calc(var(--wrapper-maxwidth) / 1.7);
     --rules-dialog-height: max-content;
@@ -301,7 +315,8 @@
 
   /* game options */
   .game-option {
-    --game-option-width: 6.5rem;
+    --game-option-width: 9rem;
+    --border-width: 1rem;
   }
 
   .wrapper:has(.contest-options-container) {
@@ -314,5 +329,9 @@
 
   .option-wrapper {
     --flex-direction: column;
+  }
+
+  .game-window:has(.contest-options-container) .game-option {
+    --border-width: 1.6rem;
   }
 }
