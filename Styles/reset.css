@@ -68,8 +68,8 @@ html {
 
 body {
   background: var(--clr-body-bg) no-repeat;
-  min-height: 100dvh;
   min-height: 100vh;
+  min-height: 100dvh;
   font-size: 1.4rem;
   font-family: var(--ff-Barlow-semi-condensed);
 }

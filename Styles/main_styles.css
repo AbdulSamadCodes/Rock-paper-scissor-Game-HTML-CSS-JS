@@ -1,11 +1,11 @@
 /* custom properties */
 :root {
   /* spacings */
+  --game-window-wrapper-gap: 6rem;
   --rules-btn-margin-inline: auto;
   --rules-btn-padding: 0.8rem 3.2rem;
   --rules-dialog-padding: 8rem 3rem 4rem;
   --rules-dialog-wrapper-gap: 0;
-
   --option-wrapper-gap: 1.5rem;
 
   /* colors */
@@ -20,8 +20,10 @@
   --fs-score-points: 4.2rem;
   --fs-rules-btn: 1.5rem;
   --fs-rules-dialog-title: 2.7rem;
+  --fs-wrapper-info: 5rem;
+  --fs-play-again-btn: 1.8rem;
 
-  --fs-option-wrapper-text: 1.4rem;
+  --fs-option-wrapper-text: 1.6rem;
 
   --fw-score-title: 700;
   --fw-score-points: 700;
@@ -95,6 +97,10 @@
   align-self: var(--game-window-alignment);
 }
 
+.game-window-wrapper {
+  row-gap: var(--game-window-wrapper-gap);
+}
+
 .pentagon-figure {
   max-width: var(--pentagon-figure-width);
 }
@@ -146,7 +152,7 @@
 
 /* game options */
 .game-option {
-  --position:absolute;
+  --position: absolute;
   --game-option-width: 7.5rem;
   --border-width: 0.8rem;
 
@@ -198,14 +204,14 @@
   border-color: var(--clr-red);
 }
 
-.game-window:has(.pentagon-figure-wrapper) .game-option {
-  position:var(--position);
+.game-window .pentagon-figure-wrapper .game-option {
+  position: var(--position);
 }
 
-.game-window:has(.contest-options-container) .game-option {
-  --position:static;
+.game-window .contest-options-container .game-option {
+  --position: static;
   --game-option-width: 100%;
-  
+
   translate: 0;
 }
 
@@ -243,6 +249,39 @@
   overflow: hidden;
 }
 
+.result-info {
+  --text-align: center;
+
+  text-align: var(--text-align);
+}
+
+.winner-info {
+  color: var(--clr-white);
+
+  font-size: var(--fs-wrapper-info);
+  font-weight: 600;
+}
+
+.play-again-btn {
+  --letter-spacing: 1.5px;
+
+  background-color: var(--clr-white);
+  color: var(--clr-play-again-btn);
+  font-size: var(--fs-play-again-btn);
+  font-weight: 600;
+  margin-block-start: 0.8rem;
+  padding: 1.2rem 4rem;
+  border-radius: 0.8rem;
+  letter-spacing: var(--letter-spacing);
+
+  transition: background-color 300ms ease, color 300ms ease;
+}
+
+.play-again-btn:is(:hover, :focus) {
+  background-color: var(--clr-play-again-btn);
+  color: var(--clr-white);
+}
+
 /* media queries */
 
 /* responsive for tablet devices */
@@ -277,6 +316,7 @@
 
     --fs-score-title: 1.4rem;
     --fs-option-wrapper-text: 1.8rem;
+    --game-window-wrapper-gap: 0rem;
 
     --wrapper-maxwidth: 60rem;
     --logo-width: 90px;
