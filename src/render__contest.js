@@ -17,7 +17,7 @@ function handleContestCreation() {
 handleContestCreation();
 
 // function to remove the previous states of game from UI
-const removeGameState = state => state.remove();
+const removeGameState = state => state.style.display = "none";
 
 //function to handle the contest
 function handleContest(userSelectedOption) {
@@ -58,8 +58,10 @@ function handleContest(userSelectedOption) {
   contestFragment.appendChild(contestOptionsContainer);
   gameWindowWrapper.appendChild(contestFragment);    
 
+  //display user option
   displayUserOption(userSelectedOption,userOptionContainer);
-  
+
+  //display CPU option
   setTimeout(displayCPUOption,2000,CPUOptionContainer);
 }
 

@@ -146,6 +146,7 @@
 
 /* game options */
 .game-option {
+  --position:absolute;
   --game-option-width: 7.5rem;
   --border-width: 0.8rem;
 
@@ -198,12 +199,13 @@
 }
 
 .game-window:has(.pentagon-figure-wrapper) .game-option {
-  position: absolute;
+  position:var(--position);
 }
 
 .game-window:has(.contest-options-container) .game-option {
+  --position:static;
   --game-option-width: 100%;
-
+  
   translate: 0;
 }
 
