@@ -16,6 +16,19 @@ function handleContestCreation() {
 
 handleContestCreation();
 
+//function to update the scoreboard
+const updateScoreboard = (function () {
+  let score = 0;
+  return function (winnerOrDraw) {
+    if (winnerOrDraw === "Draw" || (score === 0 && winnerOrDraw === "You lose")) {
+      return;
+    }
+
+    score = winnerOrDraw === "You win" ? score + 1 : score - 1;
+    document.querySelector("[data-score-points]").textContent = score;
+  }
+})();
+
 // function to remove the previous states of game from UI
 const removeGameState = state => state.style.display = "none";
 
@@ -69,6 +82,7 @@ function handleContest(userSelectedOption) {
     const winnerOrDraw = validateContest(userSelectedObject, CPUSelectedObject);
 
     displayResult(gameWindowWrapper, winnerOrDraw);
+    updateScoreboard(winnerOrDraw);
   }, 2000);
 }
 
@@ -101,7 +115,7 @@ function validateContest(userSelectedObject, CPUSelectedObject) {
     return winnerOrDraw;
   };
 
-  winnerOrDraw = userSelectedObject.beats.includes(CPUSelectedObject.name) ? "You win" : "You Lose";
+  winnerOrDraw = userSelectedObject.beats.includes(CPUSelectedObject.name) ? "You win" : "You lose";
 
   return winnerOrDraw;
 }
@@ -131,4 +145,3 @@ function createNewContest() {
 
   pentagonFigureWrapper.style.display = "block";
 }
-
